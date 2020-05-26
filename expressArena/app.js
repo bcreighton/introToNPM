@@ -142,6 +142,24 @@ app.get('/lotto', (req, res) => {
   res.send(message);
 })
 
+// Testing status requests
+
+app.get('/hello', (req, res) => {
+  res.status(200).send('Hello, everything was ok!');
+})
+
+app.get('/hello500', (req, res) => {
+  res.status(500).send(`Opps I did it again.`)
+})
+
+app.get('/hello400', (req, res) => {
+  res.status(400).send(`Opps you did it again.`)
+})
+
+app.get('/hello204', (req, res) => {
+  res.status(204).send(`Here is some informaiton`)
+})
+
 app.listen(8000, () => {
   console.log('Express server is listening on port 8000!');
 })
